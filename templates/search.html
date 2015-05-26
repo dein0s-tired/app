@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="{{ url_for('static', filename='js/datepicker.js') }}"></script>
+
+{% extends "layout.html" %}
+
+{% block content %}
+    <h2>Search</h2>
+    <form action="{{ url_for('search') }}" method="post">
+        {{ form.hidden_tag() }}
+        <div>
+            {{ form.frame_start.label }}
+            {{ form.frame_start }}
+        </div>
+
+        <div>
+            {{ form.frame_end.label }}
+            {{ form.frame_end }}
+        </div>
+
+        {{  form.submit }}
+    </form>
+
+{% endblock %}
